@@ -1,0 +1,57 @@
+<idea-plugin>
+    <id>com.your.company.unique.plugin.id</id>
+    <name>Plugin display name here</name>
+    <version>1.0</version>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+    <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+    <idea-version since-build="173.0"/>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <!--<group id="CustomDefaultActionGroup" class="CustomDefaultActionGroup" popup="true"-->
+        <!--text="DefaultActionGroup Inheritor" description="Default Action Group Demo">-->
+        <!--<action class="CustomGroupedAction" id="CustomGroupeadAction"-->
+        <!--text="Custom Grouped Action" description="Custom Grouped Action Demo"/>-->
+        <!--<add-to-group group-id="ToolsMenu" anchor="last"/>-->
+        <!--</group>-->
+        <group id="share" class="com.stl.plugin.groups.ShareGroup" popup="true" text="Share Options"
+               description="Share your current workspace">
+            <action id="toggle_load_share" class="com.stl.plugin.actions.ExternalizeWorkspaceAction"
+                    text="Externalize Workspace"
+                    description="Enable external connections"/>
+            <action id="define_ip_host" class="com.stl.plugin.actions.DefineHostAction" text="Set Host"
+                    description="Set the Host to connect to">
+            </action>
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </group>
+
+
+    </actions>
+
+    <application-components>
+        <component>
+            <implementation-class>com.stl.plugin.main.ShareTheLoad</implementation-class>
+        </component>
+    </application-components>
+</idea-plugin>
