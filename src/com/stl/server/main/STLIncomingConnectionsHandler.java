@@ -22,7 +22,7 @@ public class STLIncomingConnectionsHandler extends Thread {
     private static STLIncomingConnectionsHandler instance;
 
     private STLIncomingConnectionsHandler() throws IOException {
-        logger = STLLogger.getInstance();
+        logger = new STLLogger();
         try {
             serverSocket = new ServerSocket(15833);
         } catch (IOException e) {
